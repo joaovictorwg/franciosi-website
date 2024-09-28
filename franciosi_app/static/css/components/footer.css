@@ -1,0 +1,52 @@
+.logofooter {
+
+    margin: 0 auto;
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura e altura */
+
+    display: inline-block;
+}
+
+.logo-img {
+    display: block; /* Remove o espaço extra abaixo da imagem */
+    margin: 0; /* Remove margens indesejadas */
+    padding: 0; /* Remove o padding da imagem */
+    object-fit: contain; /* Ajusta a imagem para caber dentro da div */
+    width: 150px;
+}
+
+/* Ajuste o espaçamento ao redor da imagem */
+footer .container {
+    padding: 0 0px; /* Ajuste o padding conforme necessário */
+    max-width: 1200px; /* Define a largura máxima */
+
+}
+
+.footer-link {
+    margin: 0 10px; /* Ajuste o espaçamento entre os links */
+}
+
+.social-icon {
+    margin: 0 10px; /* Ajuste o espaçamento entre os ícones */
+}
+
+.footer-link{
+    text-decoration: none;
+    color: #F6F6F6;
+    font-weight: 700;
+    font-size: larger;
+}
+
+.social-icon {
+    font-size: 2rem;
+    margin: 0 0.5rem;
+    color: #F6F6F6; /* Cor padrão dos ícones */
+    text-decoration: none;
+}
+.social-icon:hover {
+    color: #007bff; /* Cor ao passar o mouse */
+}
+
+.footer-info{
+    color: rgb(212, 206, 206);
+    font-weight: 500;
+}

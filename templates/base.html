@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Veículos{% endblock %}</title>
+    <!-- Link para o CSS do Bootstrap (ou outro framework que você esteja usando) -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+   
+</head>
+<body>
+    <!-- Bloco da navbar que pode ser incluído em qualquer página -->   
+    {% block navbar %}{% endblock %}
+    
+    {% block carrousel %}{% endblock %}
+
+    {% block cards %}{% endblock %}
+
+    {% block footer %}{% endblock%}
+
+    <footer class="text-center mt-5">
+        <p>&copy; 2024 Meu Site. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Scripts do Bootstrap (ou outro framework que você esteja usando) -->
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/navbar.js' %}"></script> <!-- Seu script personalizado -->
+    <script src="{% static 'js/cards.js' %}"></script> <!-- Seu script personalizado -->
+</body>
+</html>

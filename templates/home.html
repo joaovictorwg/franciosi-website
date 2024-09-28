@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Página Inicial{% endblock %}
+
+{% block navbar %}
+    {% include 'components/navbar.html' %}
+{% endblock %}
+
+{% block carrousel %}
+    {% include 'components/carrousel.html' %}
+{% endblock %}
+
+{% block cards %}
+    {% include 'components/list.html' with products=products %}
+{% endblock %}
+
+{% block footer %}
+    {% include 'components/footer.html' %}
+{% endblock %}

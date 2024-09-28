@@ -1,0 +1,80 @@
+/* Configuração da navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 999; /* Garantir que esteja sobre o carrossel */
+    transition: background-color 0.3s ease;
+    padding-right: 12px;
+}
+
+.container-fluid {
+    max-width: none; /* Remove o limite máximo padrão do Bootstrap */
+}
+
+/* Ajuste da imagem na navbar */
+.navbar-brand img {
+    height: 70px; /* A imagem ocupará 100% da altura da navbar */
+   
+    width: auto; /* Mantém a proporção da imagem */
+}
+
+#navbar-content{
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza a div */
+}
+
+.navbar-nav{
+    margin-right: 6px;
+}
+
+.navbar-collapse {
+    flex-basis: 100%;
+    flex-grow: 1;
+    display: flex; /* Certifique-se de que seja um contêiner flex */
+    align-items: center;
+    justify-content: flex-end; /* Alinha os itens à direita */
+}
+
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .show>.nav-link {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 940px) {
+    .menuMobile .navList {
+        display: block !important;
+        position: absolute;
+        width: 100%;
+        height: 0px; /* Inicia com altura 0 */
+        top: 100%; /* Alinha o menu abaixo da navbar */
+        right: 0;
+        background-color: rgba(244, 245, 247, 0.9);
+        z-index: 1000;
+        visibility: hidden; /* Inicialmente invisível */
+        overflow-y: hidden; /* Evita que o conteúdo vaze */
+        transition: height 0.5s ease, visibility 0.5s ease; /* Transições suaves */
+    }
+
+    .menuMobile.active .navList {
+        height: 70vh; /* Define a altura quando ativo */
+        visibility: visible; /* Torna visível */
+        /* Altera a cor do texto e o espaçamento */
+        color: black; /* Texto preto quando ativo */
+    }
+
+    .menuMobile.active .navList .nav-link {
+        color: black; /* Texto preto para links */
+        padding-left: 20px; /* Espaçamento à esquerda dos itens */
+    }
+    
+    .menuMobile .navList .nav-link {
+        padding-left: 20px; /* Espaçamento à esquerda dos itens em estado padrão */
+    }
+}

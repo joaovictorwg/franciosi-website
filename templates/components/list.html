@@ -1,0 +1,33 @@
+{% load static %}
+
+
+{% block cards %}
+    <div class="products-container">
+        <div>
+            <h1 class="products-title">Nossos Produtos</h1>
+        </div>
+
+        <!-- Row para os cards -->
+        <div class="row">
+            {% for product in products %}
+            <div class="col-auto mb-4"> <!-- 3 cards por linha em telas médias e 2 em pequenas -->
+                <div class="card">
+                    {% if product.foto %}
+                        <img class="card-img-top" src="{{ product.foto.url }}" alt="Imagem do produto">
+                    {% else %}
+                        <img class="card-img-top" src="{% static 'path/to/default/image.png' %}" alt="Imagem padrão" style="width: 100%; height: 200px; object-fit: cover;">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.nome }}</h5>
+                        <p class="card-text">R$ {{ product.preco}}</p>
+                        <p class="card-text">{{ product.descricao }}</p>
+                    </div>
+                    <div>
+                        <button id="add-cart-button" class="add-cart-button">Adicionar ao Carrinho</button>                  
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

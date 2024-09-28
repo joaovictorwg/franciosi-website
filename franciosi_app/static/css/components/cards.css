@@ -1,0 +1,73 @@
+.row{
+    max-width: 1200px;
+    padding: 10px;
+    display: flex; /* Certifica que seja um contêiner flexível */
+    flex-wrap: wrap; /* Permite que os itens quebrem linha */
+    justify-content: center;
+}
+.card {
+    width: 280px;
+    height: 400px; /* Altura fixa do card */
+    margin: 5px; /* Margem entre os cards */
+    padding: 5px; /* Padding para manter espaço interno */
+    box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura total */
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(20px); /* Move os cards para baixo */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.card.visible {
+    opacity: 1; /* Tornar visível */
+    transform: translateY(0); /* Volta à posição original */
+}
+.card-img-top {
+    flex: none !important;
+    height: 200px; /* Altura fixa para a imagem */
+    background-color: #F6F6F6;
+    object-fit: cover;
+    display: block;
+    margin: 5px auto 5px auto; /* Centraliza a imagem horizontalmente */
+    background-color: #F6F6F6;
+    /* object-fit: cover; A imagem é cortada para preencher o espaço, mantendo a proporção */
+}
+.card .card-body {
+    flex: none;
+    display: block;
+    padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+    color: var(--bs-card-color);
+}
+.products-container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* CSS DO TITULO */
+.products-title{
+    margin-left: 10px;
+}
+
+/* CSS DO BOTÃO */
+.add-cart-button {
+    display: flex; /* Define o layout flexível */
+    justify-content: center; /* Alinha o botão ao centro horizontalmente */
+    margin: 0 auto; /* Centraliza o botão no eixo principal */
+    padding: 10px 20px; /* Adiciona espaçamento interno */
+    background-color: #F6F6F6; /* Cor de fundo do botão */
+    color: #00B359; /* Cor do texto */
+    border: none; /* Remove bordas */
+    border-radius: 5px; /* Arredonda os cantos do botão */
+    border: 1px solid #00B359;
+    cursor: pointer; /* Troca o cursor para indicar interatividade */
+    width: 100%; /* Ajusta o botão para ocupar a largura total disponível */
+    max-width: 260px; /* Define uma largura máxima */
+    text-align: center; /* Centraliza o texto do botão */
+    transition: background-color 0.3s ease; /* Adiciona um efeito de transição suave */
+}
+
+.add-cart-button:hover {
+    background-color: #00B359; /* Cor de fundo ao passar o mouse */
+    color: #F6F6F6;
+}
+
+.row > div {
+    box-sizing: border-box; /* Garantindo que os elementos dentro da linha usem o box-sizing correto */
+}
