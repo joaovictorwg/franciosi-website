@@ -1,3 +1,9 @@
+.bg-light {
+    --bs-bg-opacity: 1; /* Se precisar da opacidade */
+    background-color: #00b359 !important; /* Cor personalizada */
+}
+
+
 .logofooter {
 
     margin: 0 auto;
@@ -21,10 +27,6 @@ footer .container {
 
 }
 
-.footer-link {
-    margin: 0 10px; /* Ajuste o espaçamento entre os links */
-}
-
 .social-icon {
     margin: 0 10px; /* Ajuste o espaçamento entre os ícones */
 }
@@ -34,6 +36,10 @@ footer .container {
     color: #F6F6F6;
     font-weight: 700;
     font-size: larger;
+    margin: 0 10px; /* Ajuste o espaçamento entre os links */
+}
+.footer-link:hover{
+    color: #203774;
 }
 
 .social-icon {
@@ -43,7 +49,7 @@ footer .container {
     text-decoration: none;
 }
 .social-icon:hover {
-    color: #007bff; /* Cor ao passar o mouse */
+    color: #203774; /* Cor ao passar o mouse */
 }
 
 .footer-info{

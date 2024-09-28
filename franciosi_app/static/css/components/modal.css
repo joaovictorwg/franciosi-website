@@ -1,0 +1,25 @@
+.modal-img{
+    max-width: 480px;
+    max-height: 360px;
+}
+
+.modal-text{
+    max-width: 520px;
+    max-height: 480px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: space-around;
+    flex-direction: column;
+    padding-left: 10px;
+    justify-content: flex-end;
+}
+
+.modal-body{
+    position: relative;
+    flex: 1 1 auto;
+    padding: var(--bs-modal-padding);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}

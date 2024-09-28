@@ -1,0 +1,62 @@
+{% load static %}
+
+
+{% block cards %}
+    <div class="products-container">
+        <div>
+            <h1 class="products-title">Nossos Produtos</h1>
+        </div>
+
+        <!-- Row para os cards -->
+        <div class="row">
+            {% for product in products %}
+            <div class="col-auto mb-4"> <!-- 3 cards por linha em telas médias e 2 em pequenas -->
+                <div class="card" data-bs-toggle="modal" data-bs-target="#productModal{{ product.id }}" style="cursor: pointer;">
+                    {% if product.foto %}
+                        <img class="card-img-top" src="{{ product.foto.url }}" alt="Imagem do produto">
+                    {% else %}
+                        <img class="card-img-top" src="{% static 'path/to/default/image.png' %}" alt="Imagem padrão" style="width: 100%; height: 200px; object-fit: cover;">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.nome }}</h5>
+                        <p class="card-text">{{ product.descricao }}</p>
+                        <p class="card-price">R$ {{ product.preco}}</p>
+                    </div>
+                    <div>
+                        <button id="add-cart-button" class="add-cart-button">Adicionar ao Carrinho</button>                  
+                    </div>
+                </div>
+            </div>
+
+             <!-- modal para os cards -->
+            <div class="modal fade" id="productModal{{ product.id }}" tabindex="-1" aria-labelledby="productModalLabel{{ product.id }}" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="productModalLabel{{ product.id }}">{{ product.nome }}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-img">
+                                {% if product.foto %}
+                                    <img src="{{ product.foto.url }}" alt="{{ product.nome }}" class="img-fluid mb-3">
+                                {% else %}
+                                    <img src="{% static 'path/to/default/image.png' %}" alt="Imagem padrão" class="img-fluid mb-3">
+                                {% endif %}
+                            </div>
+                            <div class="modal-text">
+                                <p>{{ product.descricao }}</p>
+                                <p><strong>Preço:</strong> R$ {{ product.preco }}</p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            <button type="button" class="btn btn-primary">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

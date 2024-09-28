@@ -15,6 +15,10 @@
     transform: translateY(20px); /* Move os cards para baixo */
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
 .card.visible {
     opacity: 1; /* Tornar visível */
     transform: translateY(0); /* Volta à posição original */
@@ -43,6 +47,16 @@
 /* CSS DO TITULO */
 .products-title{
     margin-left: 10px;
+}
+
+.card-price{
+    color: #00B359;
+    font-size: x-large;
+    font-weight: 700;
+    margin: 0;
+}
+.card-text{
+    margin-bottom: 0;
 }
 
 /* CSS DO BOTÃO */
