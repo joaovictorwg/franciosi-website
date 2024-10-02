@@ -1,6 +1,6 @@
-from django.shortcuts import render
-from products.models import Products
 from django.views.generic import ListView
+from products.models import Products
+from django.shortcuts import render
 
 # Create your views here.
 class ListProducts(ListView):
@@ -8,4 +8,5 @@ class ListProducts(ListView):
     model = Products
     context_object_name = 'products'
     template_name = 'components/list.html'
+
 

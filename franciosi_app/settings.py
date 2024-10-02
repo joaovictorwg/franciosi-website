@@ -63,12 +63,21 @@ WSGI_APPLICATION = 'franciosi_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default='postgresql://franciosisociedade_database_user:SCz453PNz3mjQ5YfRG3njUyXnIS7xGoq@dpg-crj704m8ii6s73fd1ul0-a.oregon-postgres.render.com/franciosisociedade_database'
+#     )
+# }
 DATABASES = {
-    'default': dj_database_url.config(
-        default='postgresql://franciosisociedade_database_user:SCz453PNz3mjQ5YfRG3njUyXnIS7xGoq@dpg-crj704m8ii6s73fd1ul0-a.oregon-postgres.render.com/franciosisociedade_database'
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',  # O backend do banco de dados é PostgreSQL
+        'NAME': 'franciosi-teste',  # Nome do banco de dados
+        'USER': 'postgres',  # Nome de usuário do PostgreSQL
+        'PASSWORD': '12345',  # Senha do usuário PostgreSQL
+        'HOST': 'localhost',  # O servidor está rodando localmente
+        'PORT': '5432',  # Porta padrão do PostgreSQL
+    }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
